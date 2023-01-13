@@ -11,7 +11,7 @@ import BlockIcon from "@mui/material";
 
 class DirectorsDialog extends React.Component {
   handleDelete = () => {
-    const { handleClose } = this.props;
+    const { id, handleClose } = this.props;
     handleClose();
   };
 
