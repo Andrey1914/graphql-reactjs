@@ -6,12 +6,12 @@ import { TableBody } from "@mui/material/TableBody";
 import { TableCell } from "@mui/material/TableCell";
 import { TableHead } from "@mui/material/TableHead";
 import { TableRow } from "@mui/material/TableRow";
-import MoreIcon from "@mui/material/MoreVert";
 import { IconButton } from "@mui/material/IconButton";
 import { MenuItem } from "@mui/material/MenuItem";
 import { Menu } from "@mui/material/Menu";
-import DeleteIcon from "@mui/material/Delete";
-import CreateIcon from "@mui/material/Create";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteIcon from "@mui/icons-material/Delete";
+import CreateIcon from "@mui/icons-material/Create";
 
 import DirectorsDialog from "../DirectorsDialog/DirectorsDialog";
 
@@ -109,7 +109,7 @@ class DirectorsTable extends React.Component {
                           color="inherit"
                           onClick={(e) => this.handleClick(e, director)}
                         >
-                          <MoreIcon />
+                          <MoreVertIcon />
                         </IconButton>
                         <Menu
                           id="simple-menu"

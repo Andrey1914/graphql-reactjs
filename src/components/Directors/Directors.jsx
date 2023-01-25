@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Fab } from "@mui/material";
-import AddIcon from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 import DirectorsTable from "../DirectorsTable/DirectorsTable";
 import DirectorsForm from "../DirectorsForm/DirectorsForm";

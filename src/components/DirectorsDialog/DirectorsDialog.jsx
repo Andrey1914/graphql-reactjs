@@ -6,8 +6,8 @@ import { DialogActions } from "@mui/material/DialogActions";
 import { DialogContent } from "@mui/material/DialogContent";
 import { DialogContentText } from "@mui/material/DialogContentText";
 import { DialogTitle } from "@mui/material/DialogTitle";
-import DeleteForeverIcon from "@mui/material";
-import BlockIcon from "@mui/material";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import BlockIcon from "@mui/icons-material/Block";
 
 class DirectorsDialog extends React.Component {
   handleDelete = () => {
