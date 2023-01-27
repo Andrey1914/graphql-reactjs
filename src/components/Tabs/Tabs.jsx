@@ -1,9 +1,9 @@
 import React from "react";
 
-import { AppBar } from "@mui/material/AppBar";
-import { Tabs } from "@mui/material/Tabs";
-import { Tab } from "@mui/material/Tab";
-import { Typography } from "@mui/material/Typography";
+import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
 import SwipeableViews from "react-swipeable-views";
 import MovieCreationIcon from "@mui/icons-material/MovieCreation";
 import CameraIcon from "@mui/icons-material/Camera";

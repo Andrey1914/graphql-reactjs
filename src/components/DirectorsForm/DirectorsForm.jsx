@@ -1,9 +1,9 @@
 import React from "react";
 
-import { TextField } from "@mui/material/TextField";
-import { Button } from "@mui/material/Button";
-import { DialogTitle } from "@mui/material/DialogTitle";
-import { Dialog } from "@mui/material/Dialog";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import DialogTitle from "@mui/material/DialogTitle";
+import Dialog from "@mui/material/Dialog";
 import SaveIcon from "@mui/icons-material/Save";
 
 import withHocs from "./DirectorsFormHoc";

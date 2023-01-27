@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
-import red from "@mui/material/colors";
+import { red } from "@mui/material/colors";
 
-export default createTheme({
+export const theme = createTheme({
   typography: {
     useNextVariants: true,
     color: "#fff",
