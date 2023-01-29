@@ -74,7 +74,7 @@ class Movies extends React.Component {
             {/* <Fab
               onClick={() => this.handleClickOpen()}
               color="primary"
-              aria-label="Add"
+              aria-label="add"
               className={classes.fab}
             > */}
             <AddIcon />
