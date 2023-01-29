@@ -106,7 +106,7 @@ class MoviesForm extends React.Component {
                 <OutlinedInput
                   name="directorId"
                   id="outlined-director"
-                  labelWidth={57}
+                  labelwidth={57}
                 />
               }
             >
