@@ -1,6 +1,6 @@
 import React from "react";
 
-import Fab from "@mui/material/Fab";
+// import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 
 import DirectorsTable from "../DirectorsTable/DirectorsTable";
@@ -49,14 +49,16 @@ class Directors extends React.Component {
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
           />
-          <Fab
-            onClick={() => this.handleClickOpen(null)}
-            color="primary"
-            aria-label="Add"
-            className={classes.fab}
-          >
+          <button>
+            {/* <Fab
+              onClick={() => this.handleClickOpen(null)}
+              color="primary"
+              aria-label="Add"
+              className={classes.fab}
+            > */}
             <AddIcon />
-          </Fab>
+            {/* </Fab> */}
+          </button>
         </div>
       </>
     );

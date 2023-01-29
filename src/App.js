@@ -1,15 +1,21 @@
-// import logo from './logo.svg';
-// import './App.css';
 import React from "react";
 import Tabs from "./components/Tabs/Tabs";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./components/theme";
+import { ApolloClient } from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+
+const client = new ApolloClient({
+  uri: `http://localhost:3005/graphql`,
+});
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Tabs />
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <Tabs />
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
