@@ -106,7 +106,7 @@ class DirectorsTable extends React.Component {
                           onClose={this.handleClose}
                         >
                           <MenuItem onClick={() => this.handleEdit(director)}>
-                            <CreateIcon />
+                            <CreateIcon /> Edit
                           </MenuItem>
                           <MenuItem onClick={this.handleDelete}>
                             <DeleteIcon /> Delete
