@@ -13,7 +13,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import SaveIcon from "@mui/icons-material/Save";
 
-import withHocs from "./MoviesFormHoc";
+// import withHocs from "./MoviesFormHoc";
 
 const directors = [
   {
@@ -43,7 +43,7 @@ class MoviesForm extends React.Component {
 
   render() {
     const {
-      classes,
+      // classes,
       open,
       handleChange,
       handleSelectChange,
@@ -58,14 +58,14 @@ class MoviesForm extends React.Component {
         open={open}
         aria-labelledby="simple-dialog-title"
       >
-        <DialogTitle className={classes.title} id="simple-dialog-title">
-          Movie information
-        </DialogTitle>
-        <form className={classes.container} noValidate autoComplete="off">
+        {/* <DialogTitle className={classes.title} id="simple-dialog-title"> */}
+        <DialogTitle id="simple-dialog-title">Movie information</DialogTitle>
+        {/* <form className={classes.container} noValidate autoComplete="off"> */}
+        <form noValidate autoComplete="off">
           <TextField
             id="outlined-name"
             label="Name"
-            className={classes.textField}
+            // className={classes.textField}
             value={name}
             onChange={handleChange("name")}
             margin="normal"
@@ -74,7 +74,7 @@ class MoviesForm extends React.Component {
           <TextField
             id="outlined-genre"
             label="Genre"
-            className={classes.textField}
+            // className={classes.textField}
             value={genre}
             onChange={handleChange("genre")}
             margin="normal"
@@ -86,11 +86,12 @@ class MoviesForm extends React.Component {
             value={rate}
             onChange={handleChange("rate")}
             type="number"
-            className={classes.textField}
+            // className={classes.textField}
             margin="normal"
             variant="outlined"
           />
-          <FormControl variant="outlined" className={classes.formControlSelect}>
+          {/* <FormControl variant="outlined" className={classes.formControlSelect}> */}
+          <FormControl variant="outlined">
             <InputLabel
               ref={(ref) => {
                 this.InputLabelRef = ref;
@@ -117,7 +118,8 @@ class MoviesForm extends React.Component {
               ))}
             </Select>
           </FormControl>
-          <div className={classes.wrapper}>
+          {/* <div className={classes.wrapper}> */}
+          <div>
             <FormControlLabel
               control={
                 <Checkbox
@@ -132,7 +134,7 @@ class MoviesForm extends React.Component {
               onClick={this.handleSave}
               variant="contained"
               color="primary"
-              className={classes.button}
+              // className={classes.button}
             >
               <SaveIcon /> Save
             </Button>
@@ -143,4 +145,5 @@ class MoviesForm extends React.Component {
   }
 }
 
-export default withHocs(MoviesForm);
+// export default withHocs(MoviesForm);
+export default MoviesForm;

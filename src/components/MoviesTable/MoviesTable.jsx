@@ -58,7 +58,9 @@ class MoviesTable extends React.Component {
 
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
-    const { classes, data = {} } = this.props;
+    // const { classes, data = {} } = this.props;
+    const { data = {} } = this.props;
+
     const { movies = [] } = data;
 
     // console.log(this.props.data);
@@ -70,7 +72,8 @@ class MoviesTable extends React.Component {
           handleClose={this.handleDialogClose}
           id={activeElem.id}
         />
-        <Paper className={classes.root}>
+        {/* <Paper className={classes.root}> */}
+        <Paper>
           <Table>
             <TableHead>
               <TableRow>
@@ -130,3 +133,4 @@ class MoviesTable extends React.Component {
 }
 
 export default withHocs(MoviesTable);
+// export default MoviesTable;

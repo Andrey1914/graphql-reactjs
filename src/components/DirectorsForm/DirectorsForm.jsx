@@ -6,7 +6,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import SaveIcon from "@mui/icons-material/Save";
 
-import withHocs from "./DirectorsFormHoc";
+// import withHocs from "./DirectorsFormHoc";
 
 class DirectorsForm extends React.Component {
   handleClose = () => {
@@ -20,7 +20,8 @@ class DirectorsForm extends React.Component {
   };
 
   render() {
-    const { classes, open, handleChange, selectedValue = {} } = this.props;
+    // const { classes, open, handleChange, selectedValue = {} } = this.props;
+    const { open, handleChange, selectedValue = {} } = this.props;
     const { name, age } = selectedValue;
 
     return (
@@ -29,14 +30,14 @@ class DirectorsForm extends React.Component {
         open={open}
         aria-labelledby="simple-dialog-title"
       >
-        <DialogTitle className={classes.title} id="simple-dialog-title">
-          Director information
-        </DialogTitle>
-        <form className={classes.container} noValidate autoComplete="off">
+        {/* <DialogTitle className={classes.title} id="simple-dialog-title"> */}
+        <DialogTitle id="simple-dialog-title">Director information</DialogTitle>
+        {/* <form className={classes.container} noValidate autoComplete="off"> */}
+        <form noValidate autoComplete="off">
           <TextField
             id="outlined-name"
             label="Name"
-            className={classes.textField}
+            // className={classes.textField}
             value={name}
             onChange={handleChange("name")}
             margin="normal"
@@ -45,19 +46,20 @@ class DirectorsForm extends React.Component {
           <TextField
             id="outlined-rate"
             label="Age"
-            className={classes.textField}
+            // className={classes.textField}
             value={age}
             onChange={handleChange("age")}
             type="number"
             margin="normal"
             variant="outlined"
           />
-          <div className={classes.wrapper}>
+          {/* <div className={classes.wrapper}> */}
+          <div>
             <Button
               onClick={this.handleSave}
               variant="contained"
               color="primary"
-              className={classes.button}
+              // className={classes.button}
             >
               <SaveIcon /> Save
             </Button>
@@ -68,4 +70,5 @@ class DirectorsForm extends React.Component {
   }
 }
 
-export default withHocs(DirectorsForm);
+// export default withHocs(DirectorsForm);
+export default DirectorsForm;

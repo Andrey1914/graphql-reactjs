@@ -1,6 +1,4 @@
-import { createTheme } from "@mui/material/styles";
-import { blue } from "@mui/material/colors";
-import { red } from "@mui/material/colors";
+import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
   typography: {
@@ -8,14 +6,20 @@ export const theme = createTheme({
     color: "#fff",
   },
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: {
       main: "#E535AB",
+      contrastText: "#fff",
     },
-    secondary: blue,
-    error: red,
+    secondary: {
+      main: "#2196f3",
+      contrastText: "#fff",
+    },
+    error: {
+      main: "#d32f2f",
+      contrastText: "#fff",
+    },
     contrastThreshold: 3,
     tonalOffset: 0.2,
-    getContrastText: "#fff",
   },
 });

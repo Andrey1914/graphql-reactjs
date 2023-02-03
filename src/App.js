@@ -1,6 +1,6 @@
 import React from "react";
 import Tabs from "./components/Tabs/Tabs";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material";
 import { theme } from "./components/theme";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "react-apollo";

@@ -53,7 +53,9 @@ class DirectorsTable extends React.Component {
 
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
-    const { classes, data = {} } = this.props;
+    // const { classes, data = {} } = this.props;
+    const { data = {} } = this.props;
+
     const { directors = [] } = data;
 
     // console.log(this.props.data);
@@ -65,7 +67,8 @@ class DirectorsTable extends React.Component {
           handleClose={this.handleDialogClose}
           id={activeElem.id}
         />
-        <Paper className={classes.root}>
+        {/* <Paper className={classes.root}> */}
+        <Paper elevation={1}>
           <Table>
             <TableHead>
               <TableRow>
@@ -126,3 +129,4 @@ class DirectorsTable extends React.Component {
 }
 
 export default withHocs(DirectorsTable);
+// export default DirectorsTable;
