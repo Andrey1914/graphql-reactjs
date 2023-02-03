@@ -1,6 +1,22 @@
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 import { compose } from "recompose";
+import { graphql } from "react-apollo";
 
-import { styles } from "./styles";
+import { addMovieMutation } from "./mutations";
+import { moviesQuery } from "../MoviesTable/queries";
+import { directorsQuery } from "./queries";
 
-export default compose(styled(styles));
+// import { styles } from "./styles";
+
+const withGraphqlAdd = graphql(addMovieMutation, {
+  props: ({ mutate }) => ({
+    addMovie: (movie) =>
+      mutate({
+        variables: movie,
+        refetchQueries: [{ query: moviesQuery }],
+      }),
+  }),
+});
+
+// export default compose(styled(styles));
+export default compose(withGraphqlAdd, graphql(directorsQuery));
