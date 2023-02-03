@@ -6,7 +6,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import SaveIcon from "@mui/icons-material/Save";
 
-// import withHocs from "./DirectorsFormHoc";
+import withHocs from "./DirectorsFormHoc";
 
 class DirectorsForm extends React.Component {
   handleClose = () => {
@@ -71,5 +71,5 @@ class DirectorsForm extends React.Component {
   }
 }
 
-// export default withHocs(DirectorsForm);
-export default DirectorsForm;
+export default withHocs(DirectorsForm);
+// export default DirectorsForm;

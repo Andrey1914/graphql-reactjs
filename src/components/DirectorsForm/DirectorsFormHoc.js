@@ -1,11 +1,11 @@
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 import { compose } from "recompose";
 import { graphql } from "react-apollo";
 
 import { addDirectorMutation } from "./mutations";
 import { directorsQuery } from "../DirectorsTable/queries";
 
-import { styles } from "./styles";
+// import { styles } from "./styles";
 
 const withGraphqlAdd = graphql(addDirectorMutation, {
   props: ({ mutate }) => ({
@@ -17,4 +17,5 @@ const withGraphqlAdd = graphql(addDirectorMutation, {
   }),
 });
 
-export default compose(styled(styles), withGraphqlAdd);
+// export default compose(styled(styles), withGraphqlAdd);
+export default compose(withGraphqlAdd);
