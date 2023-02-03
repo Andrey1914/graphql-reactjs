@@ -1,16 +1,18 @@
 import React from "react";
 
-import TextField from "@mui/material/TextField";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import Checkbox from "@mui/material/Checkbox";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import InputLabel from "@mui/material/InputLabel";
-import Button from "@mui/material/Button";
-import DialogTitle from "@mui/material/DialogTitle";
-import Dialog from "@mui/material/Dialog";
+import {
+  TextField,
+  OutlinedInput,
+  MenuItem,
+  Select,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  InputLabel,
+  Button,
+  DialogTitle,
+  Dialog,
+} from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
 

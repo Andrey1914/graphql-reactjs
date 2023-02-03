@@ -1,7 +1,7 @@
 import React from "react";
 
 import Fab from "@mui/material/Fab";
-// import Button from "@mui/material/Button";
+
 import AddIcon from "@mui/icons-material/Add";
 
 import MoviesTable from "../MoviesTable/MoviesTable";
@@ -72,11 +72,7 @@ class Movies extends React.Component {
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
           />
-          {/* <Button
-            variant="outlined"
-            // className={classes.fab}
-            onClick={() => this.handleClickOpen()}
-          > */}
+
           <Fab
             onClick={() => this.handleClickOpen()}
             color="primary"
@@ -85,7 +81,6 @@ class Movies extends React.Component {
           >
             <AddIcon />
           </Fab>
-          {/* </Button> */}
         </div>
       </>
     );
