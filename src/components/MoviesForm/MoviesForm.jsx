@@ -11,24 +11,25 @@ import InputLabel from "@mui/material/InputLabel";
 import Button from "@mui/material/Button";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
+
 import SaveIcon from "@mui/icons-material/Save";
 
-// import withHocs from "./MoviesFormHoc";
+import withHocs from "./MoviesFormHoc";
 
-const directors = [
-  {
-    id: 1,
-    name: "Quentin Tarantino",
-    age: 55,
-    movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
-  },
-  {
-    id: 2,
-    name: "Guy Ritchie",
-    age: 50,
-    movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
-  },
-];
+// const directors = [
+//   {
+//     id: 1,
+//     name: "Quentin Tarantino",
+//     age: 55,
+//     movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
+//   },
+//   {
+//     id: 2,
+//     name: "Guy Ritchie",
+//     age: 50,
+//     movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
+//   },
+// ];
 
 class MoviesForm extends React.Component {
   handleClose = () => {
@@ -36,14 +37,23 @@ class MoviesForm extends React.Component {
   };
 
   handleSave = () => {
-    const { SelectedValue, onClose } = this.props;
+    const { SelectedValue, onClose, addMovie } = this.props;
     const { id, name, genre, rate, directorId, watched } = SelectedValue;
+    addMovie({
+      id,
+      name,
+      genre,
+      rate: Number(rate),
+      directorId,
+      watched: Boolean(watched),
+    });
     onClose();
   };
 
   render() {
     const {
       // classes,
+      data = {},
       open,
       handleChange,
       handleSelectChange,
@@ -51,6 +61,7 @@ class MoviesForm extends React.Component {
       selectedValue = {},
     } = this.props;
     const { name, genre, rate, directorId, watched } = selectedValue;
+    const { directors = [] } = data;
 
     return (
       <Dialog
@@ -145,5 +156,5 @@ class MoviesForm extends React.Component {
   }
 }
 
-// export default withHocs(MoviesForm);
-export default MoviesForm;
+export default withHocs(MoviesForm);
+// export default MoviesForm;
