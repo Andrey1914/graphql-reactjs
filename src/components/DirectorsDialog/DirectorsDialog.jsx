@@ -12,9 +12,12 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import BlockIcon from "@mui/icons-material/Block";
 
+import withHocs from "./DirectorsDialogHoc";
+
 class DirectorsDialog extends React.Component {
   handleDelete = () => {
-    const { id, handleClose } = this.props;
+    const { id, handleClose, deleteDirector } = this.props;
+    deleteDirector(id);
     handleClose();
   };
 
@@ -52,4 +55,4 @@ class DirectorsDialog extends React.Component {
   }
 }
 
-export default DirectorsDialog;
+export default withHocs(DirectorsDialog);
