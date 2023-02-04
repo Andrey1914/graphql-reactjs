@@ -9,7 +9,7 @@ import CameraIcon from "@mui/icons-material/Camera";
 import Movies from "../Movies/Movies";
 import Directors from "../Directors/Directors";
 
-// import withHocs from "./TabsHoc";
+import withHocs from "./TabsHoc";
 
 const TabContainer = ({ children, dir }) => (
   <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -30,12 +30,14 @@ class SimpleTabs extends React.Component {
   };
 
   render() {
-    // const { classes, theme } = this.props;
+    const { classes, theme } = this.props;
+    // const { theme } = this.props;
+
     const { value } = this.state;
 
     return (
-      // <div className={classes.root}>
-      <div>
+      <div className={classes.root}>
+        {/* <div> */}
         <AppBar position="static">
           <Tabs variant="fullWidth" value={value} onChange={this.handleChange}>
             <Tab label="Movies" icon={<CameraIcon />} />
@@ -43,16 +45,16 @@ class SimpleTabs extends React.Component {
           </Tabs>
         </AppBar>
         <SwipeableViews
-          // axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
           onChangeIndex={this.handleChangeIndex}
         >
-          {/* <TabContainer dir={theme.direction}> */}
-          <TabContainer>
+          <TabContainer dir={theme.direction}>
+            {/* <TabContainer> */}
             <Movies />
           </TabContainer>
-          {/* <TabContainer dir={theme.direction}> */}
-          <TabContainer>
+          <TabContainer dir={theme.direction}>
+            {/* <TabContainer> */}
             <Directors />
           </TabContainer>
         </SwipeableViews>
@@ -61,5 +63,5 @@ class SimpleTabs extends React.Component {
   }
 }
 
-// export default withHocs(SimpleTabs);
-export default SimpleTabs;
+export default withHocs(SimpleTabs);
+// export default SimpleTabs;

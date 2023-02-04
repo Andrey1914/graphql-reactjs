@@ -7,7 +7,7 @@ import AddIcon from "@mui/icons-material/Add";
 import MoviesTable from "../MoviesTable/MoviesTable";
 import MoviesForm from "../MoviesForm/MoviesForm";
 
-// import withHocs from "./MoviesHoc";
+import withHocs from "./MoviesHoc";
 
 class Movies extends React.Component {
   state = {
@@ -54,7 +54,7 @@ class Movies extends React.Component {
 
   render() {
     const { id, name, genre, watched, rate, directorId, open } = this.state;
-    // const { classes } = this.props;
+    const { classes } = this.props;
 
     return (
       <>
@@ -66,8 +66,8 @@ class Movies extends React.Component {
           open={open}
           onClose={this.handleClose}
         />
-        {/* <div className={classes.wrapper}> */}
-        <div>
+        <div className={classes.wrapper}>
+          {/* <div> */}
           <MoviesTable
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
@@ -77,7 +77,7 @@ class Movies extends React.Component {
             onClick={() => this.handleClickOpen()}
             color="primary"
             aria-label="add"
-            // className={classes.fab}
+            className={classes.fab}
           >
             <AddIcon />
           </Fab>
@@ -87,5 +87,5 @@ class Movies extends React.Component {
   }
 }
 
-// export default withHocs(Movies);
-export default Movies;
+export default withHocs(Movies);
+// export default Movies;

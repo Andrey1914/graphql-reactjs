@@ -60,8 +60,8 @@ class MoviesTable extends React.Component {
 
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
-    // const { classes, data = {} } = this.props;
-    const { data = {} } = this.props;
+    const { classes, data = {} } = this.props;
+    // const { data = {} } = this.props;
 
     const { movies = [] } = data;
 
@@ -74,8 +74,8 @@ class MoviesTable extends React.Component {
           handleClose={this.handleDialogClose}
           id={activeElem.id}
         />
-        {/* <Paper className={classes.root}> */}
-        <Paper>
+        <Paper className={classes.root}>
+          {/* <Paper> */}
           <Table>
             <TableHead>
               <TableRow>
@@ -100,7 +100,7 @@ class MoviesTable extends React.Component {
                     <TableCell>
                       <Checkbox checked={movie.watched} disabled />
                     </TableCell>
-                    <TableCell>
+                    <TableCell align="right">
                       <>
                         <IconButton
                           color="inherit"

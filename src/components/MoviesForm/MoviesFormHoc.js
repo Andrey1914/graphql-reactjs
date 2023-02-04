@@ -1,4 +1,4 @@
-// import { styled } from "@mui/material/styles";
+import { withStyles } from "@mui/styles";
 import { compose } from "recompose";
 import { graphql } from "react-apollo";
 
@@ -6,7 +6,7 @@ import { addMovieMutation } from "./mutations";
 import { moviesQuery } from "../MoviesTable/queries";
 import { directorsQuery } from "./queries";
 
-// import { styles } from "./styles";
+import { styles } from "./styles";
 
 const withGraphqlAdd = graphql(addMovieMutation, {
   props: ({ mutate }) => ({
@@ -19,4 +19,8 @@ const withGraphqlAdd = graphql(addMovieMutation, {
 });
 
 // export default compose(styled(styles));
-export default compose(withGraphqlAdd, graphql(directorsQuery));
+export default compose(
+  withStyles(styles),
+  withGraphqlAdd,
+  graphql(directorsQuery)
+);

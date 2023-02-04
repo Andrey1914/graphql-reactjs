@@ -7,7 +7,9 @@ import AddIcon from "@mui/icons-material/Add";
 import DirectorsTable from "../DirectorsTable/DirectorsTable";
 import DirectorsForm from "../DirectorsForm/DirectorsForm";
 
-// import withHocs from "./DirectorsHoc";
+// import { Wrapper, PozitionedFab } from "./styles";
+
+import withHocs from "./DirectorsHoc";
 
 class Directors extends React.Component {
   state = {
@@ -35,7 +37,7 @@ class Directors extends React.Component {
 
   render() {
     const { name, age, id, open } = this.state;
-    // const { classes } = this.props;
+    const { classes } = this.props;
 
     return (
       <>
@@ -45,8 +47,8 @@ class Directors extends React.Component {
           open={open}
           onClose={this.handleClose}
         />
-        {/* <div className={classes.wrapper}> */}
-        <div>
+        <div className={classes.wrapper}>
+          {/* <div> */}
           <DirectorsTable
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
@@ -56,7 +58,7 @@ class Directors extends React.Component {
             onClick={() => this.handleClickOpen(null)}
             color="primary"
             aria-label="Add"
-            // className={classes.fab}
+            className={classes.fab}
           >
             <AddIcon />
           </Fab>
@@ -66,5 +68,5 @@ class Directors extends React.Component {
   }
 }
 
-// export default withHocs(Directors);
-export default Directors;
+export default withHocs(Directors);
+// export default Directors;
