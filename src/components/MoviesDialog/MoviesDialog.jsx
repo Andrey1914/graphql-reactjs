@@ -12,9 +12,12 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import BlockIcon from "@mui/icons-material/Block";
 
+import withHocs from "./MoviesDialogHoc";
+
 class MovieDialog extends React.Component {
   handleDelete = () => {
-    const { handleClose } = this.props;
+    const { id, handleClose, deleteMovie } = this.props;
+    deleteMovie(id);
     handleClose();
   };
 
@@ -49,4 +52,4 @@ class MovieDialog extends React.Component {
   }
 }
 
-export default MovieDialog;
+export default withHocs(MovieDialog);
