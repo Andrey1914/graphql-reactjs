@@ -6,7 +6,7 @@ export const addMovieMutation = gql`
     $genre: String!
     $watched: Boolean!
     $rate: Int
-    $directorId: ID
+    $directorId: ID!
   ) {
     addMovie(
       name: $name
@@ -27,7 +27,7 @@ export const updateMovieMutation = gql`
     $genre: String!
     $watched: Boolean!
     $rate: Int
-    $directorId: ID
+    $directorId: ID!
   ) {
     updateMovie(
       id: $id
