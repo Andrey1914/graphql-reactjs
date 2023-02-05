@@ -35,6 +35,7 @@ class Movies extends React.Component {
       rate: 0,
       directorId: "",
       open: false,
+      id: null,
     });
   };
 
