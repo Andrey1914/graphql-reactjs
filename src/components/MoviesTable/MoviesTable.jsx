@@ -1,5 +1,6 @@
 import React from "react";
 
+import CssBaseline from "@mui/material/CssBaseline";
 import {
   Paper,
   Table,
@@ -18,6 +19,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 
 import MoviesDialog from "../MoviesDialog/MoviesDialog";
+import MoviesSearch from "../MoviesSearch/MoviesSearch";
 
 import withHocs from "./MoviesTableHoc";
 
@@ -25,6 +27,22 @@ class MoviesTable extends React.Component {
   state = {
     anchorEl: null,
     openDialog: false,
+  };
+
+  handleChange = (name) => (event) => {
+    this.setState({ [name]: event.target.value });
+  };
+
+  handleSearch = (e) => {
+    const { data } = this.props;
+    const { name } = this.props;
+
+    if (e.charCode === 13) {
+      data.fetchMore({
+        variables: { name },
+        updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult,
+      });
+    }
   };
 
   handleDialogOpen = () => {
@@ -61,7 +79,6 @@ class MoviesTable extends React.Component {
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
     const { classes, data = {} } = this.props;
-    // const { data = {} } = this.props;
 
     const { movies = [] } = data;
 
@@ -69,6 +86,14 @@ class MoviesTable extends React.Component {
 
     return (
       <>
+        <Paper>
+          <CssBaseline />
+          <MoviesSearch
+            // name={name}
+            handleChange={this.handleChange}
+            handleSearch={this.handleSearch}
+          />
+        </Paper>
         <MoviesDialog
           open={openDialog}
           handleClose={this.handleDialogClose}

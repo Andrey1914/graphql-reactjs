@@ -1,6 +1,6 @@
 import React from "react";
 
-import { InputBase } from "@mui/material/InputBase";
+import InputBase from "@mui/material/InputBase";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -13,8 +13,6 @@ class MoviesSearch extends React.Component {
     return (
       <div className={classes.search}>
         <div className={classes.searchIcon}>
-          {/* <div>
-        <div> */}
           <SearchIcon />
         </div>
         <InputBase
