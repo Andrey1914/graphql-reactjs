@@ -18,37 +18,30 @@ import SaveIcon from "@mui/icons-material/Save";
 
 import withHocs from "./MoviesFormHoc";
 
-// const directors = [
-//   {
-//     id: 1,
-//     name: "Quentin Tarantino",
-//     age: 55,
-//     movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
-//   },
-//   {
-//     id: 2,
-//     name: "Guy Ritchie",
-//     age: 50,
-//     movies: [{ name: "Movie 1" }, { name: "Movie 2" }],
-//   },
-// ];
-
 class MoviesForm extends React.Component {
   handleClose = () => {
     this.props.onClose();
   };
 
   handleSave = () => {
-    const { selectedValue, onClose, addMovie } = this.props;
+    const { selectedValue, onClose, addMovie, updateMovie } = this.props;
     const { id, name, genre, rate, directorId, watched } = selectedValue;
-    addMovie({
-      id,
-      name,
-      genre,
-      rate: Number(rate),
-      directorId,
-      watched: Boolean(watched),
-    });
+    id
+      ? updateMovie({
+          id,
+          name,
+          genre,
+          rate: Number(rate),
+          directorId,
+          watched: Boolean(watched),
+        })
+      : addMovie({
+          name,
+          genre,
+          rate: Number(rate),
+          directorId,
+          watched: Boolean(watched),
+        });
     onClose();
   };
 
@@ -74,9 +67,8 @@ class MoviesForm extends React.Component {
         <DialogTitle className={classes.title} id="simple-dialog-title">
           Movie information
         </DialogTitle>
-        {/* <DialogTitle id="simple-dialog-title">Movie information</DialogTitle> */}
+
         <form className={classes.container} noValidate autoComplete="off">
-          {/* <form noValidate autoComplete="off"> */}
           <TextField
             id="outlined-name"
             label="Name"
@@ -106,7 +98,6 @@ class MoviesForm extends React.Component {
             variant="outlined"
           />
           <FormControl variant="outlined" className={classes.formControlSelect}>
-            {/* <FormControl variant="outlined"> */}
             <InputLabel
               ref={(ref) => {
                 this.InputLabelRef = ref;
@@ -134,7 +125,6 @@ class MoviesForm extends React.Component {
             </Select>
           </FormControl>
           <div className={classes.wrapper}>
-            {/* <div> */}
             <FormControlLabel
               control={
                 <Checkbox
@@ -161,4 +151,3 @@ class MoviesForm extends React.Component {
 }
 
 export default withHocs(MoviesForm);
-// export default MoviesForm;
