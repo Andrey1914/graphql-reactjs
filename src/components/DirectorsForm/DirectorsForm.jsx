@@ -22,7 +22,7 @@ class DirectorsForm extends React.Component {
 
   render() {
     const { classes, open, handleChange, selectedValue = {} } = this.props;
-    // const { open, handleChange, selectedValue = {} } = this.props;
+
     const { name, age } = selectedValue;
 
     return (
@@ -34,9 +34,8 @@ class DirectorsForm extends React.Component {
         <DialogTitle className={classes.title} id="simple-dialog-title">
           Director information
         </DialogTitle>
-        {/* <DialogTitle id="simple-dialog-title">Director information</DialogTitle> */}
+
         <form className={classes.container} noValidate autoComplete="off">
-          {/* <form noValidate autoComplete="off"> */}
           <TextField
             id="outlined-name"
             label="Name"
@@ -57,7 +56,6 @@ class DirectorsForm extends React.Component {
             variant="outlined"
           />
           <div className={classes.wrapper}>
-            {/* <div> */}
             <Button
               onClick={this.handleSave}
               variant="contained"
@@ -74,4 +72,3 @@ class DirectorsForm extends React.Component {
 }
 
 export default withHocs(DirectorsForm);
-// export default DirectorsForm;
