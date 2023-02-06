@@ -34,7 +34,7 @@ class DirectorsTable extends React.Component {
 
   handleSearch = (e) => {
     const { data } = this.props;
-    const { name } = this.props;
+    const { name } = this.state;
 
     if (e.charCode === 13) {
       data.fetchMore({

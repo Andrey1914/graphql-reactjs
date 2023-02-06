@@ -1,6 +1,5 @@
 import React from "react";
 
-import CssBaseline from "@mui/material/CssBaseline";
 import {
   Paper,
   Table,
@@ -36,7 +35,7 @@ class MoviesTable extends React.Component {
 
   handleSearch = (e) => {
     const { data } = this.props;
-    const { name } = this.props;
+    const { name } = this.state;
 
     if (e.charCode === 13) {
       data.fetchMore({
@@ -88,7 +87,6 @@ class MoviesTable extends React.Component {
     return (
       <>
         <Paper>
-          <CssBaseline />
           <MoviesSearch
             name={name}
             handleChange={this.handleChange}
