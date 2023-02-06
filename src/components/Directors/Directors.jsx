@@ -7,8 +7,6 @@ import AddIcon from "@mui/icons-material/Add";
 import DirectorsTable from "../DirectorsTable/DirectorsTable";
 import DirectorsForm from "../DirectorsForm/DirectorsForm";
 
-// import { Wrapper, PozitionedFab } from "./styles";
-
 import withHocs from "./DirectorsHoc";
 
 class Directors extends React.Component {
@@ -48,7 +46,6 @@ class Directors extends React.Component {
           onClose={this.handleClose}
         />
         <div className={classes.wrapper}>
-          {/* <div> */}
           <DirectorsTable
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
@@ -69,4 +66,3 @@ class Directors extends React.Component {
 }
 
 export default withHocs(Directors);
-// export default Directors;

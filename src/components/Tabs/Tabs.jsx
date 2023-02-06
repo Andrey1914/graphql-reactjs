@@ -25,19 +25,18 @@ class SimpleTabs extends React.Component {
   handleChange = (event, value) => {
     this.setState({ value });
   };
+
   handleChangeIndex = (index) => {
     this.setState({ value: index });
   };
 
   render() {
     const { classes, theme } = this.props;
-    // const { theme } = this.props;
 
     const { value } = this.state;
 
     return (
       <div className={classes.root}>
-        {/* <div> */}
         <AppBar position="static">
           <Tabs variant="fullWidth" value={value} onChange={this.handleChange}>
             <Tab label="Movies" icon={<CameraIcon />} />
@@ -50,11 +49,9 @@ class SimpleTabs extends React.Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-            {/* <TabContainer> */}
             <Movies />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            {/* <TabContainer> */}
             <Directors />
           </TabContainer>
         </SwipeableViews>

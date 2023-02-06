@@ -7,7 +7,5 @@ export const styles = (theme) => ({
     position: "absolute",
     bottom: 0,
     right: 0,
-    // top: 10,
-    // right: 10,
   },
 });

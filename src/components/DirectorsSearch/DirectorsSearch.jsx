@@ -30,5 +30,4 @@ class DirectorsSearch extends React.Component {
   }
 }
 
-// export default DirectorsSearch;
 export default withHocs(DirectorsSearch);

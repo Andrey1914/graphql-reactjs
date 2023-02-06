@@ -2,7 +2,6 @@ import React from "react";
 import Tabs from "./components/Tabs/Tabs";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./components/theme";
-import { CssBaseline } from "@mui/material/";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "react-apollo";
 
@@ -15,7 +14,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <Tabs />
       </ThemeProvider>
     </ApolloProvider>
