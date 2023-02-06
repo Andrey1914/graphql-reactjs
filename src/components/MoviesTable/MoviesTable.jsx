@@ -82,7 +82,7 @@ class MoviesTable extends React.Component {
 
     const { movies = [] } = data;
 
-    // console.log(this.props.data);
+    console.log(this.props.data);
 
     return (
       <>

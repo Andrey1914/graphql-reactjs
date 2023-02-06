@@ -68,7 +68,6 @@ class Movies extends React.Component {
           onClose={this.handleClose}
         />
         <div className={classes.wrapper}>
-          {/* <div> */}
           <MoviesTable
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
@@ -89,4 +88,3 @@ class Movies extends React.Component {
 }
 
 export default withHocs(Movies);
-// export default Movies;
