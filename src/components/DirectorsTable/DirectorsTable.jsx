@@ -17,6 +17,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 
 import DirectorsDialog from "../DirectorsDialog/DirectorsDialog";
+import DirectorsSearch from "../DirectorsSearch/DirectorsSearch";
 
 import withHocs from "./DirectorsTableHoc";
 
@@ -24,6 +25,23 @@ class DirectorsTable extends React.Component {
   state = {
     anchorEl: null,
     openDialog: false,
+    name: "",
+  };
+
+  handleChange = (name) => (event) => {
+    this.setState({ [name]: event.target.value });
+  };
+
+  handleSearch = (e) => {
+    const { data } = this.props;
+    const { name } = this.props;
+
+    if (e.charCode === 13) {
+      data.fetchMore({
+        variables: { name },
+        updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult,
+      });
+    }
   };
 
   handleDialogOpen = () => {
@@ -55,9 +73,8 @@ class DirectorsTable extends React.Component {
   };
 
   render() {
-    const { anchorEl, openDialog, data: activeElem = {} } = this.state;
+    const { anchorEl, openDialog, data: activeElem = {}, name } = this.state;
     const { classes, data = {} } = this.props;
-    // const { data = {} } = this.props;
 
     const { directors = [] } = data;
 
@@ -65,13 +82,19 @@ class DirectorsTable extends React.Component {
 
     return (
       <>
+        <Paper>
+          <DirectorsSearch
+            name={name}
+            handleChange={this.handleChange}
+            handleSearch={this.handleSearch}
+          />
+        </Paper>
         <DirectorsDialog
           open={openDialog}
           handleClose={this.handleDialogClose}
           id={activeElem.id}
         />
         <Paper className={classes.root}>
-          {/* <Paper elevation={1}> */}
           <Table>
             <TableHead>
               <TableRow>
@@ -132,4 +155,3 @@ class DirectorsTable extends React.Component {
 }
 
 export default withHocs(DirectorsTable);
-// export default DirectorsTable;

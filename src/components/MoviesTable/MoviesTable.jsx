@@ -27,6 +27,7 @@ class MoviesTable extends React.Component {
   state = {
     anchorEl: null,
     openDialog: false,
+    name: "",
   };
 
   handleChange = (name) => (event) => {
@@ -77,7 +78,7 @@ class MoviesTable extends React.Component {
   };
 
   render() {
-    const { anchorEl, openDialog, data: activeElem = {} } = this.state;
+    const { anchorEl, openDialog, data: activeElem = {}, name } = this.state;
     const { classes, data = {} } = this.props;
 
     const { movies = [] } = data;
@@ -89,7 +90,7 @@ class MoviesTable extends React.Component {
         <Paper>
           <CssBaseline />
           <MoviesSearch
-            // name={name}
+            name={name}
             handleChange={this.handleChange}
             handleSearch={this.handleSearch}
           />
@@ -100,7 +101,6 @@ class MoviesTable extends React.Component {
           id={activeElem.id}
         />
         <Paper className={classes.root}>
-          {/* <Paper> */}
           <Table>
             <TableHead>
               <TableRow>
@@ -160,4 +160,3 @@ class MoviesTable extends React.Component {
 }
 
 export default withHocs(MoviesTable);
-// export default MoviesTable;
