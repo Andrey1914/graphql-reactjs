@@ -48,7 +48,6 @@ class MoviesTable extends React.Component {
   handleDialogOpen = () => {
     this.setState({ openDialog: true });
   };
-
   handleDialogClose = () => {
     this.setState({ openDialog: false });
   };
@@ -61,9 +60,7 @@ class MoviesTable extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({
-      anchorEl: null,
-    });
+    this.setState({ anchorEl: null });
   };
 
   handleEdit = () => {
@@ -78,11 +75,10 @@ class MoviesTable extends React.Component {
 
   render() {
     const { anchorEl, openDialog, data: activeElem = {}, name } = this.state;
+
     const { classes, data = {} } = this.props;
 
     const { movies = [] } = data;
-
-    // console.log(this.props.data);
 
     return (
       <>
