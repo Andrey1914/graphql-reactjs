@@ -2,6 +2,8 @@ export const styles = (theme) => ({
   search: {
     position: "relative",
     width: "100%",
+    display: "flex",
+    flexDirection: "row-reverce",
   },
   searchIcon: {
     width: theme.spacing(9),

@@ -83,7 +83,7 @@ class DirectorsTable extends React.Component {
 
     return (
       <>
-        <Paper>
+        <Paper className={classes.searchRoot}>
           <DirectorsSearch
             name={name}
             handleChange={this.handleChange}

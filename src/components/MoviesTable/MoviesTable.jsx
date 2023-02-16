@@ -82,7 +82,7 @@ class MoviesTable extends React.Component {
 
     return (
       <>
-        <Paper>
+        <Paper className={classes.searchRoot}>
           <MoviesSearch
             name={name}
             handleChange={this.handleChange}
