@@ -1,9 +1,6 @@
 import React from "react";
 
-import InputBase from "@mui/material/InputBase";
-import { Box } from "@mui/material";
-
-import CssBaseline from "@mui/material/CssBaseline";
+import { InputBase } from "@mui/material/";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -14,24 +11,21 @@ class DirectorsSearch extends React.Component {
     const { classes, name, handleChange, handleSearch } = this.props;
 
     return (
-      <>
-        <CssBaseline />
-        <Box className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            onChange={handleChange("name")}
-            onKeyPress={(e) => handleSearch(e)}
-            value={name}
-            placeholder="Search..."
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
-            }}
-          />
-        </Box>
-      </>
+      <div className={classes.search}>
+        <div className={classes.searchIcon}>
+          <SearchIcon />
+        </div>
+        <InputBase
+          onChange={handleChange("name")}
+          onKeyPress={(e) => handleSearch(e)}
+          value={name}
+          placeholder="Search..."
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+          }}
+        />
+      </div>
     );
   }
 }
