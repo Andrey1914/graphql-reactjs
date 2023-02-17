@@ -61,4 +61,3 @@ class SimpleTabs extends React.Component {
 }
 
 export default withHocs(SimpleTabs);
-// export default SimpleTabs;

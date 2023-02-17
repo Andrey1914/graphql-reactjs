@@ -79,8 +79,6 @@ class DirectorsTable extends React.Component {
 
     const { directors = [] } = data;
 
-    // console.log(this.props.data);
-
     return (
       <>
         <Paper className={classes.searchRoot}>

@@ -22,7 +22,6 @@ class DirectorsSearch extends React.Component {
           placeholder="Search..."
           classes={{
             root: classes.inputRoot,
-            input: classes.inputInput,
           }}
         />
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 
-import Fab from "@mui/material/Fab";
-import { Box } from "@mui/material";
+import { Fab } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 
@@ -46,8 +45,7 @@ class Directors extends React.Component {
           open={open}
           onClose={this.handleClose}
         />
-        {/* <div className={classes.wrapper}> */}
-        <Box className={classes.wrapper}>
+        <div className={classes.wrapper}>
           <DirectorsTable
             onOpen={this.handleClickOpen}
             onClose={this.handleClose}
@@ -60,9 +58,7 @@ class Directors extends React.Component {
           >
             <AddIcon />
           </Fab>
-        </Box>
-
-        {/* </div> */}
+        </div>
       </>
     );
   }
