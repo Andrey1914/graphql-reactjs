@@ -7,7 +7,7 @@ import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
   // uri: `http://localhost:3005/graphql`,
-  uri: `https://graphql-server-cb11.onrender.com`,
+  uri: `https://graphql-server-cb11.onrender.com/graphql`,
   cache: new InMemoryCache(),
 });
 
