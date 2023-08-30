@@ -1,11 +1,9 @@
 export const styles = (theme) => ({
   wrapper: {
-    position: "relative",
-    minheigth: "calc(100vh - 24px - 2 * 72px)",
+    minHeight: "calc(100vh - 24px * 2 - 72px)",
   },
   fab: {
-    position: "absolute",
-    bottom: -24,
-    left: 0,
+    bottom: theme.spacing(0),
+    left: "calc(100% - 55px)",
   },
 });

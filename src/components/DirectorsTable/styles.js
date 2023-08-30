@@ -5,6 +5,7 @@ export const styles = (theme) => ({
     display: "flex",
   },
   root: {
+    marginBottom: theme.spacing(3),
     width: "100%",
     overflowX: "auto",
   },
